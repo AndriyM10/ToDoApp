@@ -2,8 +2,6 @@
 $srvName = "localhost"; 
 $usrName = "root"; 
 $psWrd = ''; 
-$tdtDB = "tododatabase";
-
 
 //create connection 
 $conDB = new mysqli($srvName, $usrName, $psWrd); 
@@ -17,26 +15,44 @@ else{
 */
 $tdtDB = "CREATE DATABASE IF NOT EXISTS tododatabase";
 if($conDB->query($tdtDB)===TRUE){
-	echo "Successfully created database"; 
+	echo "Successfully created database<br>"; 
 }
 else{ 
 	echo "Error creating database" .$conn->error; 
 }
 
-$conTb = new mysqli($srvName, $usrName, $psWrd, $tdtDB);
+$conTb = new mysqli($srvName, $usrName, $psWrd, "tododatabase");
 
 if($conTb->connect_error)
 		die ("Connection failed: " . $conTb->connect_error);  
 	
-$tdtTbl = "CREATE TABLE IF NOT EXISTS todotable
-			(id INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-			 taskName VARCHAR(30) NOT NULL, 
-			 status VARCHAR(10) NOT NULL, 
+$tTbl = "CREATE TABLE IF NOT EXISTS taskTable
+			(taskId INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+			 taskName VARCHAR(40) NOT NULL 
+			 )";
+if($conTb->query($tTbl) === TRUE){
+	echo "Successfully created table taskTable<br>";
+}
+
+$sTbl = "CREATE TABLE IF NOT EXISTS statusTable
+		(statusId INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		 taskId INT,
+		 FOREIGN KEY (taskId) REFERENCES taskTable(taskId),
+		 status VARCHAR(10) NOT NULL
+		)";
+if($conTb->query($sTbl) === TRUE){
+	echo "Successfully created table statusTable<br>";
+}
+
+
+$dueTbl = "CREATE TABLE IF NOT EXISTS dueTable
+			(dueDateId INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 			 dueDate TIMESTAMP NOT NULL
 			 )";
-if($conTb->query($tdtTbl) === TRUE){
-	echo "Successfully created table";
+if($conTb->query($dueTbl) === TRUE){
+	echo "Successfully created table dueTable<br>";
 }
+
 
 $conTb->close();
 $conDB->close();
