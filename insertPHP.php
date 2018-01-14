@@ -46,7 +46,6 @@ $dDate = new DueDate();
 <input type="date" required="required" name="dDate" />
 </h4>
 <input type="submit" value="submit" />
-<button type="button" onclick="window.location.href='Index.php'"> HOME PAGE </button>
 
 <?php
 
