@@ -1,0 +1,82 @@
+body{
+	background-color: lightblue; 
+	
+}
+
+h1 {
+	text-align: center; 
+}
+h2{
+	text-align: left-side; 
+	font-size: 16px;  	
+}
+
+th, td{
+	text-align: center; 
+	border: 1px solid black; 
+	border-collapse: collapse;
+	padding: 5px; 
+}
+table{
+	width: 100%;
+	margin-left: auto; 
+	margin-right: auto; 
+	border-collapse: collapse; 
+	background-color: white; 
+}
+
+.statButton{
+	width: 10%;
+}
+
+.emtpySpaceHeader{
+	height: 25px; 
+}
+
+.emptySpace{
+	height: 75px;
+}
+
+.column1{
+	width: 15%; 
+	float: left; 
+}
+
+.column2{
+	width: 85%; 
+	float: right; 
+	
+}
+.row:after{
+	content: "";
+	display: table; 
+	clear: both; 
+}
+
+.status{
+	background-color: black;
+	color: white;
+	width: 70%;
+}
+
+.green{
+	background-color: green;
+	color: white;
+	width: 70%;
+	
+}
+
+.blue{
+	background-color: blue;
+	color: white;
+	width: 70%;
+}
+
+.red{
+	background-color: red;
+	color: white;
+	width: 70%;
+}
+
+
+
