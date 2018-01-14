@@ -154,6 +154,7 @@ class dataBase{
 		$delRowT = "UPDATE tasktable SET tasktable.taskName = '$task', tasktable.taskDescription = '$taskDescr' WHERE tasktable.taskId = '$taskID' ";
 		$delRowS = "UPDATE statustable SET statustable.status = '$stat' WHERE statustable.taskId = '$taskID' ";
 		$delRowD = "UPDATE duetable SET duetable.dueDate = '$date' WHERE duetable.taskId = '$taskID' ";
+		
 		$check = 0; 
 		$strCnt = mysqli_query($cdb, $checkT);
 		while ($row = mysqli_fetch_assoc($strCnt)){ 
