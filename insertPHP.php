@@ -22,14 +22,20 @@ $dDate = new DueDate();
 
 </head>
 <body> 
-<h1> Adding A Task </h1>
+<h1> To Do Task Application </h1>
 
 <form action="insertPHP.php" method="POST">
+<h3>
+<legend class="legend"> New Task Information</legend> 
+</h3>
 <h4> Task Name: 
 <input type="text" required="required" name="taskName" />
 </h4>
+<h4> Task Description: </h4>
+<textarea name="taskDescr" required="required" rows="5" cols="50"></textarea>
 <h4> Status:
 	<select name="status" required="required">
+	<option value=""> </option>
 	<option value="started">Started</option>
 	<option value="pending">Pending</option>
 	<option value="completed">Completed</option>
@@ -44,8 +50,9 @@ $dDate = new DueDate();
 
 <?php
 
-	if((isset($_POST['taskName']))&&(isset($_POST['status'])) && (isset($_POST['dDate']))){
+	if((isset($_POST['taskName'])) && (isset($_POST['taskDescr'])) &&  (isset($_POST['status'])) && (isset($_POST['dDate']))){
 		$taskN->set_taskName($_POST['taskName']);
+		$taskN->set_taskDescr($_POST['taskDescr']);
 		$status->set_status($_POST['status']); 
 		$dDate->set_dueDate($_POST['dDate']); 
 		

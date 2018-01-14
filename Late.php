@@ -75,13 +75,6 @@ echo "connection failed: ".$conServ->connect_error;
 		}
 		echo "(".$numTot.")"; 
         ?>	
-		<br></br>
-		<button type="button" class="green" onclick="window.location.href='insertPHP.php'"> ADD </a></button>
-		<br></br> 
-		<button type="button" class="blue" onclick="window.location.href='updatePHP.php'"> UPDATE </button> 
-		<br></br> 
-		<button type="button" class="red" onclick="window.location.href='deletePHP.php'"> DELETE </button> 
-		<br></br> 
 	</div> 
 	<div class="column2"> 
 		<table> 
@@ -94,7 +87,7 @@ echo "connection failed: ".$conServ->connect_error;
 			</tr>
 			<?php
 			
-			$queryT = "SELECT * FROM tasktable, statustable, duetable WHERE tasktable.taskId = statustable.taskId AND tasktable.taskId = duetable.taskId GROUP BY tasktable.taskId";
+			$queryT = "SELECT * FROM tasktable, statustable, duetable WHERE tasktable.taskId = statustable.taskId AND tasktable.taskId = duetable.taskId AND statustable.status = 'late' GROUP BY tasktable.taskId";
 			$result = mysqli_query($cdb, $queryT);
 			while ($row = mysqli_fetch_assoc($result)){
 				echo "<tr>";
@@ -109,12 +102,6 @@ echo "connection failed: ".$conServ->connect_error;
 		</table>
 	</div>
 </div> 
-
-<br></br>	
-	
-		
-
-
 
 </body>
 </html> 
