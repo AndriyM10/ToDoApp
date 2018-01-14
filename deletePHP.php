@@ -19,10 +19,13 @@ $taskN = new TaskName();
 <body> 
 <title> Delete Task </title> 
 <link rel="stylesheet" type="text/css" href="todoCSS">
-<h1> Deleting A Task</h1>
+<h1> To Do Task Application </h1>
 
 <form action="deletePHP.php" method="POST">
-<h4> Task ID: 
+<h3>
+<legend> Delete Task </legend> 
+</h3>
+<h4> To Be Deleted Row Task ID: 
 <input type="text" name="taskID" />
 <input type="submit" value="submit" />
 </h4>

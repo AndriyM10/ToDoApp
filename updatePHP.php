@@ -23,25 +23,31 @@ $dDate = new DueDate();
 
 </head>
 <body> 
-<h1> Updating Data Table</h1> 
+<h1> To DO Task Application</h1> 
 
 <br></br>
 <form action="updatePHP.php" method="POST">
-<h4>Task ID:
+<h3>
+<legend > Update Task </legend> 
+</h3>
+<h4>Row To Be Changed Task ID:
 <input type="text" required="required" name="taskID"
 </h4>
-<h4> Task Name:
+<h4> New Task Name:
 <input type="text" required="required" name="taskName" />
+<h4> Task Description: </h4>
+<textarea name="taskDescr" required="required" rows="5" cols="50"></textarea>
 </h4>
-<h4> Status:
+<h4> New Status:
 	<select name="status" required="required">
+	<option value=""> </Option> 
 	<option value="started">Started</option>
 	<option value="pending">Pending</option>
 	<option value="completed">Completed</option>
 	<option value="late">Late</option>
 	</select> 
 </h4>
-<h4> Due Date: 
+<h4> New Due Date: 
 <input type="date" required="required" name="dDate" />
 </h4>
 <input type="submit" value="submit" />
@@ -50,9 +56,10 @@ $dDate = new DueDate();
 
 <?php 
 
-if((isset($_POST['taskID'])) && (isset($_POST['taskName'])) && (isset($_POST['status'])) && (isset($_POST['dDate']))){
+if((isset($_POST['taskID'])) &&(isset($_POST['taskDescr'])) && (isset($_POST['taskName'])) && (isset($_POST['status'])) && (isset($_POST['dDate']))){
 		$taskN->set_taskID($_POST['taskID']);
 		$taskN->set_taskName($_POST['taskName']);
+		$taskN->set_taskDescr($_POST['taskDescr']);
 		$status->set_status($_POST['status']); 
 		$dDate->set_dueDate($_POST['dDate']); 
 		
@@ -64,6 +71,7 @@ if((isset($_POST['taskID'])) && (isset($_POST['taskName'])) && (isset($_POST['st
 	<tr class="status">
 	<th> Task ID</th>
 	<th> Task Name</th>
+	<th> Task Description</th>
 	<th> Status </th>
 	<th> Due Date</th>	
 	</tr>
@@ -75,6 +83,7 @@ if((isset($_POST['taskID'])) && (isset($_POST['taskName'])) && (isset($_POST['st
 		echo "<tr>";
 		echo "<td>".$row['taskId']."</td>";
 		echo "<td>".$row['taskName']."</td>";
+		echo "<td>".$row['taskDescription']."</td>";
 		echo "<td>".$row['status']."</td>";
 		echo "<td>".$row['dueDate']."</td>";
 		echo "</tr>";

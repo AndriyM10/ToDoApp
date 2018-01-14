@@ -42,7 +42,8 @@ class dataBase{
 		//creating tables and relationships 
 		$tTbl = "CREATE TABLE IF NOT EXISTS taskTable
 				(taskId INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-				 taskName VARCHAR(40) NOT NULL 
+				 taskName VARCHAR(30) NOT NULL, 
+				 taskDescription VARCHAR(200) NOT NULL
 				 )";
 		if($conServ->query($tTbl) === TRUE){
 			//echo "Successfully created table taskTable<br>";
@@ -91,11 +92,12 @@ class dataBase{
 	function insert($conServ, $taskN, $status, $dDate){
 		
 		$task = $taskN->get_taskName(); 
+		$taskDescr = $taskN->get_taskDescr(); 
 		$stat = $status->get_status(); 
 		$date = $dDate->get_dueDate();
 		
 		$cdb = $this->get_conDB($conServ); 
-		$insTT = "INSERT INTO tasktable (taskName) VALUES ('$task')";
+		$insTT = "INSERT INTO tasktable (taskName, taskDescription) VALUES ('$task', '$taskDescr')";
 
 		if($row=mysqli_query($cdb, $insTT) === TRUE){
 			$lastID = $cdb->insert_id; 
@@ -143,12 +145,13 @@ class dataBase{
 	function update($conServ, $taskN, $status, $dDate ){
 		$cdb = $this->get_conDB($conServ); 
 		$taskID = $taskN->get_taskID();
-		$task = $taskN->get_taskName(); 
+		$task = $taskN->get_taskName();
+		$taskDescr = $taskN->get_taskDescr();
 		$stat = $status->get_status(); 
 		$date = $dDate->get_dueDate();
 		
 		$checkT = "SELECT * FROM tasktable WHERE tasktable.taskId = '$taskID' "; 
-		$delRowT = "UPDATE tasktable SET tasktable.taskName = '$task' WHERE tasktable.taskId = '$taskID' ";
+		$delRowT = "UPDATE tasktable SET tasktable.taskName = '$task', tasktable.taskDescription = '$taskDescr' WHERE tasktable.taskId = '$taskID' ";
 		$delRowS = "UPDATE statustable SET statustable.status = '$stat' WHERE statustable.taskId = '$taskID' ";
 		$delRowD = "UPDATE duetable SET duetable.dueDate = '$date' WHERE duetable.taskId = '$taskID' ";
 		$check = 0; 
