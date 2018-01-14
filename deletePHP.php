@@ -1,17 +1,16 @@
 <html> 
 
 <?php
-include("DatabasePHP.php"); 
-include("TaskName.php"); 
-include("Status.php"); 
-include("DueDate.php"); 
+include("DatabaseClass.php");
+include("TaskNameClass.php"); 
+include("StatusClass.php"); 
+include("DueDateClass.php");
 
 $db = new dataBase();
 $cSer = $db->conServer();
 
 $taskN = new TaskName(); 
-//$status = new Status(); 
-//$dDate = new DueDate(); 
+
 ?>
 
 <head>

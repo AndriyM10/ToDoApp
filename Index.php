@@ -1,7 +1,7 @@
 <html> 
 
 <?php
-include("DatabasePHP.php"); 
+include("DatabaseClass.php");
 
 $db = new dataBase();
 $cSer = $db->conServer();

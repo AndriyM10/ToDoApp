@@ -1,10 +1,10 @@
 <html> 
 
 <?php
-include("DatabasePHP.php");
-include("TaskName.php"); 
-include("Status.php"); 
-include("DueDate.php"); 
+include("DatabaseClass.php");
+include("TaskNameClass.php"); 
+include("StatusClass.php"); 
+include("DueDateClass.php");
 
 
 $db = new dataBase();

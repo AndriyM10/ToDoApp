@@ -17,26 +17,6 @@
 		function get_dueDate(){
 			return $this->dueDate;
 		}
-		/*
-		function insert($cdb, $lastID){
-			$insTime = "INSERT INTO duetable (taskId, dueDate) VALUES ('$lastID','$date')";
-			if($row=mysqli_query($cdb, $insTime) === TRUE){
-				
-			}
-			else{
-					echo "Error: " .$cdb->error; 
-			}
-				
-		}
-		
-		function remove(){
-			
-		}
-		
-		function update(){
-		
-		}
-		*/
 	}
 
 ?>
