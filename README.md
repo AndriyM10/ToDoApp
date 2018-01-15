@@ -146,5 +146,6 @@ A statement above the displayed table should pop up stating "Task ID: (entered i
 #### Actual Results 
 #### Passed/Failed 
 
-## Demo
+## Demo 
 ![alt text](Demo/ToDoAppDemo.mp4)
+
