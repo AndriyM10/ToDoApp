@@ -33,20 +33,20 @@ This is an application that would be use as a simple to do application. In this 
 
 ## Requirements 
 ### Functional
-1. Database needs to be created by upon launching the app
-1. Database tables need to be created upon launching the app
 1. User needs to be able to view tasks
 1. User needs to be able to add tasks
 1. User needs to be able to delete tasks
 1. User needs to be able to update tasks
+1. User needs to be able to view task according to status 
+1. User needs to be able to view the number of tasks with certain status
  
 ### Non Functional
-1.
-1.
-1.
-1.
-1.
-1.
+1. Ease of use 
+1. Reliability 
+1. Use of multiple classes
+1. Use of multiple data tables 
+1. Capacity  
+1. Scalability
 
 ## System Architecture Diagram
 ![alt text](SystemArchitectureDiagram.jpg)
@@ -55,7 +55,7 @@ This is an application that would be use as a simple to do application. In this 
 ![alt text](DataFlowDiagram.jpg)
 
 ## Use Case
-
+![alt text](UseCases.jpg)
 
 ## Sequence Diagram
 ![alt text](SequenceDiagram.jpg)
