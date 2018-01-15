@@ -58,9 +58,11 @@ This is an application that would be use as a simple to do application. In this 
 
 
 ## Sequence Diagram
+![alt text](SequenceDiagram.jpg)
 
 ## Database Design 
-
+![alt text](DatabaseDesign.jpg)
 ## Class Diagram
+![alt text](ClassDiagram.jpg)
 
 ## Test Case
