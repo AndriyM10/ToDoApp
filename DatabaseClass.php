@@ -22,6 +22,24 @@ class dataBase{
 		return $conServ;
 		
 	}
+	function set_srvName($new_srvName){
+		$this->srvName = $new_srvName;
+	}
+	function set_usrName($new_usrName){
+		$this->usrName = $new_usrName;
+	}
+	function set_psWrd($new_psWrd){
+		$this->psWrd = $new_psWrd;
+	}
+	function get_srvName(){
+		return $this->srvName;
+	}
+	function get_usrName(){
+		return $this->usrName;
+	}
+	function get_psName(){
+		return $this->psName;
+	}
 	function create($conServ){
 		
 		$tdDB = "CREATE DATABASE IF NOT EXISTS tododatabase";
@@ -142,7 +160,7 @@ class dataBase{
 		}
 	}
 	
-	function update($conServ, $taskN, $status, $dDate ){
+	function update($conServ, $taskN, $status, $dDate){
 		$cdb = $this->get_conDB($conServ); 
 		$taskID = $taskN->get_taskID();
 		$task = $taskN->get_taskName();
