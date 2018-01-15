@@ -1,4 +1,4 @@
-# 4996Homework1
+# ToDoApp
 
 #### Table of Contents 
 
@@ -49,21 +49,21 @@ This is an application that would be use as a simple to do application. In this 
 1. Scalability
 
 ## System Architecture Diagram
-![alt text](SystemArchitectureDiagram.jpg)
+![alt text](Diagrams/SystemArchitectureDiagram.jpg)
 
 ## Data Flow Diagram
-![alt text](DataFlowDiagram.jpg)
+![alt text](Diagrams/DataFlowDiagram.jpg)
 
 ## Use Cases
-![alt text](UseCases.jpg)
+![alt text](Diagrams/UseCases.jpg)
 
 ## Sequence Diagram
-![alt text](SequenceDiagram.jpg)
+![alt text](Diagrams/SequenceDiagram.jpg)
 
 ## Database Design 
-![alt text](DatabaseDesign.jpg)
+![alt text](Diagrams/DatabaseDesign.jpg)
 ## Class Diagram
-![alt text](ClassDiagram.jpg)
+![alt text](Diagrams/ClassDiagram.jpg)
 
 ## Test Cases
 
@@ -145,3 +145,6 @@ Test to see if the application handles invalid Task ID'd enter by the user when 
 A statement above the displayed table should pop up stating "Task ID: (entered id) Is Invalid."
 #### Actual Results 
 #### Passed/Failed 
+
+## Demo
+![alt text](Demo/ToDoAppDemo.mp4)
